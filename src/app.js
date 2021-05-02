@@ -45,7 +45,7 @@ function updateUI() {
     }
 
     if (session.state == 1) {
-        document.getElementById("cz").innerText = session.data[session.indices[session.idx]]['cz']
+        document.getElementById("cz").innerText = session.data[session.indices[session.idx]]['en']
         document.getElementById('inf').value = ""
         document.getElementById('pret').value = ""
         document.getElementById('perf').value = ""
