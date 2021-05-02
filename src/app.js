@@ -98,13 +98,12 @@ document.addEventListener("keyup", function(event) {
 
 function answerString(img, textUI, user, correct) {
     img.style.visibility = "visible"
-    textUI.style.visibility = "visible"
     user.readOnly = true
     if (user.value === correct) {
         img.src = "correct.bmp";
-        textUI.innerText = "";
     } else {
-        img.src = "wrong.bmp";
+        img.src = "wrong.bmp"
+        textUI.style.visibility = "visible"
         textUI.innerText = correct;
     }
 }
