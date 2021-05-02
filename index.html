@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>German irregular verbs for Roman!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"
+        integrity="sha512-rKFvwjvE4liWPlFnvH4ZhRDfNZ9FOpdkD/BU5gAIA3VS3vOQrQ5BjKgbO3kxebKhHdHcNUHLqxQYSoxee9UwgA=="
+        crossorigin="anonymous"></script>
+    <script src="src/db.js"></script>
+    <script src="src/app.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form autocomplete='off'>
+            <div class="form-group">
+                <div id='cz'>Example input in Czech</div>
+                <label for="inf">Infinitiv</label>
+                <input type="text" class="form-control" id="inf">
+                <img id='infImg' src="correct.bmp" width="30px" height="30px">
+                <small id="infCorrect" class="form-text text-muted">Correct inf.</small>
+            </div>
+            <div class="form-group">
+                <label for="pret">Präteritum</label>
+                <input type="text" class="form-control" id="pret">
+                <img id='pretImg' src="correct.bmp" width="30px" height="30px">
+                <small id="pretCorrect" class="form-text text-muted">Correct pret.</small>
+            </div>
+            <div class="form-group">
+                <label for="pret">Perfektum</label>
+                <input type="text" class="form-control" id="perf">
+                <img id='perfImg' src="correct.bmp" width="30px" height="30px">
+                <small id="perfCorrect" class="form-text text-muted">Correct perf.</small>
+            </div>
+            <button id='submit' type="button" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
