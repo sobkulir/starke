@@ -15,6 +15,7 @@ rm -rf *
 mv .dist/* .
 rm -rf .dist
 touch .nojekyll
+date > version.txt
 
 git add -A .
 git commit -m "deploy"
