@@ -49,12 +49,12 @@ function updateUI() {
         document.getElementById('inf').value = ""
         document.getElementById('pret').value = ""
         document.getElementById('perf').value = ""
-        document.getElementById('infCorrect').innerText = ""
-        document.getElementById('pretCorrect').innerText = ""
-        document.getElementById('perfCorrect').innerText = ""
-        document.getElementById('infImg').style.display = "none"
-        document.getElementById('pretImg').style.display = "none"
-        document.getElementById('perfImg').style.display = "none"
+        document.getElementById('infCorrect').style.visibility = "hidden"
+        document.getElementById('pretCorrect').style.visibility = "hidden"
+        document.getElementById('perfCorrect').style.visibility = "hidden"
+        document.getElementById('infImg').style.visibility = "hidden"
+        document.getElementById('pretImg').style.visibility = "hidden"
+        document.getElementById('perfImg').style.visibility = "hidden"
         document.getElementById('inf').focus()
     } else if (session.state == 2) {
         infU = document.getElementById('inf').value
@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     session.state = 2;
     submitButton = document.getElementById('submit');
     submitButton.onclick = butSubmitClicked
+    document.getElementById('inf').focus()
 })
 
 // Execute a function when the user releases a key on the keyboard
@@ -93,7 +94,8 @@ document.addEventListener("keyup", function(event) {
 });
 
 function answerString(img, textUI, user, correct) {
-    img.style.display = ""
+    img.style.visibility = "visible"
+    textUI.style.visibility = "visible"
     if (user === correct) {
         img.src = "correct.bmp";
         textUI.innerText = "";
