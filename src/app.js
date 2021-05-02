@@ -49,6 +49,9 @@ function updateUI() {
         document.getElementById('inf').value = ""
         document.getElementById('pret').value = ""
         document.getElementById('perf').value = ""
+        document.getElementById('inf').readOnly = false
+        document.getElementById('pret').readOnly = false
+        document.getElementById('perf').readOnly = false
         document.getElementById('infCorrect').style.visibility = "hidden"
         document.getElementById('pretCorrect').style.visibility = "hidden"
         document.getElementById('perfCorrect').style.visibility = "hidden"
@@ -57,10 +60,10 @@ function updateUI() {
         document.getElementById('perfImg').style.visibility = "hidden"
         document.getElementById('inf').focus()
     } else if (session.state == 2) {
-        infU = document.getElementById('inf').value
-        pretU = document.getElementById('pret').value
-        perfU = document.getElementById('perf').value
-        res = submitResponse(infU, pretU, perfU)
+        infU = document.getElementById('inf')
+        pretU = document.getElementById('pret')
+        perfU = document.getElementById('perf')
+        res = submitResponse(infU.value, pretU.value, perfU.value)
         infImg = document.getElementById('infImg')
         pretImg = document.getElementById('pretImg')
         perfImg  = document.getElementById('perfImg')
@@ -96,7 +99,8 @@ document.addEventListener("keyup", function(event) {
 function answerString(img, textUI, user, correct) {
     img.style.visibility = "visible"
     textUI.style.visibility = "visible"
-    if (user === correct) {
+    user.readOnly = true
+    if (user.value === correct) {
         img.src = "correct.bmp";
         textUI.innerText = "";
     } else {
